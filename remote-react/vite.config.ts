@@ -12,7 +12,9 @@ export default defineConfig({
       exposes: {
         "./Button": "./src/components/Button.tsx",
         "./mount": "./src/mount.tsx",
+        "./store": "./src/store/count.ts",
       },
+      shared: ["zustand/vanilla"],
     }),
   ],
 });

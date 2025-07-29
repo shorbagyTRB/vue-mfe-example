@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useCountStore } from "../store/useCount";
 
 function Button() {
-  const [count, setCount] = useState(0);
+  const count = useCountStore((state) => state.count);
+  const increaseCount = useCountStore((state) => state.increaseCount);
 
   return (
     <>
       <p>React Component</p>
-      <button type="button" onClick={() => setCount((count) => count + 1)}>
+      <button type="button" onClick={() => increaseCount()}>
         count is {count}
       </button>
     </>

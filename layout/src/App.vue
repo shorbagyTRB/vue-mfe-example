@@ -1,6 +1,22 @@
 <script setup lang="ts">
 import Button from "remote/Button";
+import mount from "remoteReact/mount";
 import HostButton from "./components/Button.vue";
+import { onMounted, onUnmounted, ref } from "vue";
+
+const reactButton = ref<HTMLElement | null>(null);
+
+onMounted(() => {
+  if (reactButton.value) {
+    mount(reactButton.value);
+  }
+});
+
+onUnmounted(() => {
+  if (reactButton.value) {
+    reactButton.value = null;
+  }
+});
 </script>
 
 <template>
@@ -8,6 +24,7 @@ import HostButton from "./components/Button.vue";
     <h1>Layout</h1>
     <HostButton />
     <Button />
+    <div ref="reactButton"></div>
   </div>
 </template>
 

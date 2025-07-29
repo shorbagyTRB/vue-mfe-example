@@ -1,22 +1,8 @@
 <script setup lang="ts">
 import Button from "remote/Button";
-import mount from "remoteReact/mount";
+import reactButton from "remoteReact/mount";
 import HostButton from "./components/Button.vue";
-import { onMounted, onUnmounted, ref } from "vue";
-
-const reactButton = ref<HTMLElement | null>(null);
-
-onMounted(() => {
-  if (reactButton.value) {
-    mount(reactButton.value);
-  }
-});
-
-onUnmounted(() => {
-  if (reactButton.value) {
-    reactButton.value = null;
-  }
-});
+import Wrapper from "./components/Wrapper.vue";
 </script>
 
 <template>
@@ -31,7 +17,7 @@ onUnmounted(() => {
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
       <HostButton />
     </div>
-    <div ref="reactButton"></div>
+    <Wrapper :wrapper="reactButton" />
     <Button />
   </div>
 </template>

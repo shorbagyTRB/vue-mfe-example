@@ -8,8 +8,6 @@ const add = () => increaseCount();
 </script>
 
 <template>
-  <h1>Host Button</h1>
-
   <div class="card">
     <button type="button" @click="add">count is {{ count }}</button>
   </div>

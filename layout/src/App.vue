@@ -22,9 +22,17 @@ onUnmounted(() => {
 <template>
   <div class="layout">
     <h1>Layout</h1>
-    <HostButton />
-    <Button />
+    <p>
+      Layout is the host application, and it has a shared store with React
+      Remote application using zustand, HostButton and ReactButton use same
+      store counter
+    </p>
+    <div class="logo-container">
+      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+      <HostButton />
+    </div>
     <div ref="reactButton"></div>
+    <Button />
   </div>
 </template>
 
@@ -38,6 +46,12 @@ onUnmounted(() => {
   margin: 10px;
   color: #fff;
   font-size: 16px;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 .logo {
   height: 6em;

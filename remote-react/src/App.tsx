@@ -1,16 +1,13 @@
-import Button from './components/Button'
-import './App.css'
+import Button from "./components/Button";
+import "./App.css";
 
 function App() {
-
   return (
     <>
       <h1>Remote React</h1>
-      <div className="card">
-        <Button />
-      </div>
+      <Button />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

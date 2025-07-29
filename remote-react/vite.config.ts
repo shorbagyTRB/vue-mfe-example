@@ -17,4 +17,7 @@ export default defineConfig({
       shared: ["zustand/vanilla"],
     }),
   ],
+  build: {
+    assetsInlineLimit: 100_000_000, // effectively inlines all assets
+  },
 });

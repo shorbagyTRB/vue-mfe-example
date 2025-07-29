@@ -1,0 +1,11 @@
+.card-react {
+  padding: 2em;
+  border: 1px solid #61dafb;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}

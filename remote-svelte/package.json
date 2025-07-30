@@ -12,6 +12,7 @@
     "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json"
   },
   "devDependencies": {
+    "@module-federation/vite": "^1.7.1",
     "@originjs/vite-plugin-federation": "^1.4.1",
     "@sveltejs/vite-plugin-svelte": "^6.0.0",
     "@tsconfig/svelte": "^5.0.4",

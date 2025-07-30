@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import federation from "@originjs/vite-plugin-federation";
+// import federation from "@originjs/vite-plugin-federation";
+import { federation } from "@module-federation/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -8,9 +9,10 @@ export default defineConfig({
     vue(),
     federation({
       name: "remote",
-      filename: "remoteEntry.js",
+      filename: "assets/remoteEntry.js",
       exposes: {
         "./Button": "./src/components/Button.vue",
+        "./mount": "./src/mount.ts",
       },
       shared: ["vue"],
     }),

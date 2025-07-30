@@ -1,20 +1,26 @@
-import { mount, unmount } from "svelte";
+import { mount as mountSvelte, unmount as unmountSvelte } from "svelte";
 import Button from "./lib/Button.svelte";
 
 let app: any = null;
 
 const wrap = {
   mount: (el: HTMLElement) => {
-    if (app) unmount(app);
-    app = mount(Button, {
+    if (app) {
+      unmountSvelte(app);
+      app = null;
+    }
+    app = mountSvelte(Button, {
       target: el,
     });
   },
   unmount: () => {
     if (!app) return;
-    unmount(app);
+    unmountSvelte(app);
     app = null;
   },
 };
+
+export const mount = wrap.mount;
+export const unmount = wrap.unmount;
 
 export default wrap;

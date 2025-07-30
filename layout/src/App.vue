@@ -1,14 +1,28 @@
 <script setup lang="ts">
-import Button from "remote/Button";
-import reactButton from "remoteReact/mount";
-import svelteButton from "remoteSvelte/mount";
+// import Button from "remote/Button";
+// import reactButton, { mount as mountReact } from "remoteReact/mount";
+// import svelteButton from "remoteSvelte/mount";
 import HostButton from "./components/Button.vue";
-import Wrapper from "./components/Wrapper.vue";
+// import Wrapper from "./components/Wrapper.vue";
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
   <div class="layout">
-    <h1>Layout</h1>
+    <div class="logo-container">
+      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+      <HostButton />
+    </div>
+
+    <nav class="nav">
+      <RouterLink to="/remote">Go to Remote</RouterLink>
+      <RouterLink to="/remote-react">Go to Remote React</RouterLink>
+      <RouterLink to="/remote-svelte">Go to Remote Svelte</RouterLink>
+    </nav>
+
+    <RouterView />
+
+    <!-- <h1>Layout</h1>
     <p>
       Layout is the host application, and it has a shared store with React
       Remote application using zustand, HostButton and ReactButton use same
@@ -20,7 +34,7 @@ import Wrapper from "./components/Wrapper.vue";
     </div>
     <Wrapper :wrapper="reactButton" />
     <Wrapper :wrapper="svelteButton" />
-    <Button />
+    <Button /> -->
   </div>
 </template>
 
@@ -52,5 +66,13 @@ import Wrapper from "./components/Wrapper.vue";
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 </style>

@@ -22,4 +22,7 @@ const wrap = {
   },
 };
 
+export const mount = wrap.mount;
+export const unmount = wrap.unmount;
+
 export default wrap;

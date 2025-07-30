@@ -1,9 +1,18 @@
 <script setup lang="ts">
 import Button from "remote/Button";
 import reactButton from "remoteReact/mount";
-import svelteButton from "remoteSvelte/mount";
 import HostButton from "./components/Button.vue";
 import Wrapper from "./components/Wrapper.vue";
+import { useLoadRemoteModuleDynamically } from "./utils";
+
+const { remoteModule: svelteButtonModule, isReady } =
+  useLoadRemoteModuleDynamically({
+    remoteName: "remoteSvelteDynamic",
+    remoteEntryUrl: "http://localhost:3003/assets/remoteEntry.js",
+    exposedPath: "./mount",
+    format: "esm",
+    from: "vite",
+  });
 </script>
 
 <template>
@@ -19,7 +28,7 @@ import Wrapper from "./components/Wrapper.vue";
       <HostButton />
     </div>
     <Wrapper :wrapper="reactButton" />
-    <Wrapper :wrapper="svelteButton" />
+    <Wrapper v-if="!!isReady" :wrapper="svelteButtonModule" />
     <Button />
   </div>
 </template>

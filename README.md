@@ -1,12 +1,13 @@
-# Vue React Micro-Frontend
+# Vue React Svelte Micro-Frontend
 
-A micro-frontend project using Vue and React components with pnpm workspace.
+A micro-frontend project using Vue, React, and Svelte components with pnpm workspace.
 
 ## Project Structure
 
 - `layout/` - Main layout application (Vue)
 - `remote/` - Remote Vue component 
 - `remote-react/` - Remote React component
+- `remote-svelte/` - Remote Svelte component
 
 ## Development
 
@@ -20,6 +21,7 @@ This will start:
 - Layout app on default port (dev script)
 - Remote Vue app on port 3001 (remote script)
 - Remote React app on port 3002 (remote script)
+- Remote Svelte app on port 3003 (remote script)
 
 ### Run Individual Applications
 
@@ -32,6 +34,9 @@ pnpm dev:remote
 
 # Remote React application  
 pnpm dev:remote-react
+
+# Remote Svelte application
+pnpm dev:remote-svelte
 ```
 
 ### Build
@@ -44,6 +49,7 @@ pnpm build
 pnpm build:layout
 pnpm build:remote
 pnpm build:remote-react
+pnpm build:remote-svelte
 ```
 
 ## Workspace Configuration

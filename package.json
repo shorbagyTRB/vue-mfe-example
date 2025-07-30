@@ -8,10 +8,12 @@
     "dev:layout": "pnpm --filter layout dev",
     "dev:remote": "pnpm --filter remote remote",
     "dev:remote-react": "pnpm --filter remote-react remote",
-    "build": "pnpm --filter layout build && pnpm --filter remote build && pnpm --filter remote-react build",
+    "dev:remote-svelte": "pnpm --filter remote-svelte remote",
+    "build": "pnpm --filter layout build && pnpm --filter remote build && pnpm --filter remote-react build && pnpm --filter remote-svelte build",
     "build:layout": "pnpm --filter layout build",
     "build:remote": "pnpm --filter remote build",
-    "build:remote-react": "pnpm --filter remote-react build"
+    "build:remote-react": "pnpm --filter remote-react build",
+    "build:remote-svelte": "pnpm --filter remote-svelte build"
   },
   "devDependencies": {
     "concurrently": "^9.1.0"

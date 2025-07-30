@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Button from "remote/Button";
 import reactButton from "remoteReact/mount";
+import svelteButton from "remoteSvelte/mount";
 import HostButton from "./components/Button.vue";
 import Wrapper from "./components/Wrapper.vue";
 </script>
@@ -18,6 +19,7 @@ import Wrapper from "./components/Wrapper.vue";
       <HostButton />
     </div>
     <Wrapper :wrapper="reactButton" />
+    <Wrapper :wrapper="svelteButton" />
     <Button />
   </div>
 </template>

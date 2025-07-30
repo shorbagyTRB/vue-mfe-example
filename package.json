@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently --names \"LAYOUT,REMOTE-VUE,REMOTE-REACT\" --prefix-colors \"blue,green,yellow\" \"pnpm --filter layout dev\" \"pnpm --filter remote remote\" \"pnpm --filter remote-react remote\"",
+    "dev": "concurrently --names \"LAYOUT,REMOTE-VUE,REMOTE-REACT,REMOTE-SVELTE\" --prefix-colors \"blue,green,yellow,red\" \"pnpm --filter layout dev\" \"pnpm --filter remote remote\" \"pnpm --filter remote-react remote\" \"pnpm --filter remote-svelte remote\"",
     "dev:layout": "pnpm --filter layout dev",
     "dev:remote": "pnpm --filter remote remote",
     "dev:remote-react": "pnpm --filter remote-react remote",

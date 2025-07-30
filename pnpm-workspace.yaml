@@ -2,3 +2,4 @@ packages:
   - 'layout'
   - 'remote'
   - 'remote-react' 
+  - 'remote-svelte'

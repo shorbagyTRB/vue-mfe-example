@@ -2,3 +2,5 @@
 /dist
 /build
 /public
+.__mf__temp
+.DS_Store

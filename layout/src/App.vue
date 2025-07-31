@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Button from "remote/Button";
 import reactButton from "remoteReact/mount";
+import rsbuildButton from "reactRsbuild/mount";
 import HostButton from "./components/Button.vue";
 import Wrapper from "./components/Wrapper.vue";
 import { useLoadRemoteModuleDynamically } from "./utils";
@@ -31,6 +32,7 @@ const { remoteModule: svelteButtonModule, isReady } =
     </ErrorBoundary>
     <Wrapper :wrapper="reactButton" />
     <Wrapper v-if="!!isReady" :wrapper="svelteButtonModule" />
+    <Wrapper :wrapper="rsbuildButton" />
     <ErrorBoundary>
       <Button />
     </ErrorBoundary>

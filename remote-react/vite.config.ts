@@ -19,5 +19,15 @@ export default defineConfig({
   ],
   build: {
     assetsInlineLimit: 100_000_000, // effectively inlines all assets
+    target: "esnext",
+    minify: false,
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        format: "esm",
+        entryFileNames: "assets/[name].js",
+        minifyInternalExports: false,
+      },
+    },
   },
 });

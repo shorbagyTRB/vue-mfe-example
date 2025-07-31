@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently --names \"LAYOUT,REMOTE-VUE,REMOTE-REACT,REMOTE-SVELTE\" --prefix-colors \"blue,green,yellow,red\" \"pnpm --filter layout dev\" \"pnpm --filter remote remote\" \"pnpm --filter remote-react remote\" \"pnpm --filter remote-svelte remote\"",
+    "dev": "concurrently --names \"LAYOUT,REMOTE-VUE,REMOTE-REACT,REMOTE-SVELTE,REMOTE-RSBUILD\" --prefix-colors \"blue,green,yellow,red,purple\" \"pnpm --filter layout dev\" \"pnpm --filter remote remote\" \"pnpm --filter remote-react remote\" \"pnpm --filter remote-svelte remote\" \"pnpm --filter react-rsbuild remote\"",
     "dev:layout": "pnpm --filter layout dev",
     "dev:remote": "pnpm --filter remote remote",
     "dev:remote-react": "pnpm --filter remote-react remote",
@@ -13,9 +13,10 @@
     "build:layout": "pnpm --filter layout build",
     "build:remote": "pnpm --filter remote build",
     "build:remote-react": "pnpm --filter remote-react build",
-    "build:remote-svelte": "pnpm --filter remote-svelte build"
+    "build:remote-svelte": "pnpm --filter remote-svelte build",
+    "build:remote-rsbuild": "pnpm --filter react-rsbuild build"
   },
   "devDependencies": {
     "concurrently": "^9.1.0"
   }
-} 
+}

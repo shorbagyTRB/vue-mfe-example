@@ -11,6 +11,7 @@ export default defineConfig({
       remotes: {
         remote: "http://localhost:3001/assets/remoteEntry.js",
         remoteReact: "http://localhost:3002/assets/remoteEntry.js",
+        reactRsbuild: "http://localhost:3004/assets/remoteEntry.js",
       },
       shared: ["vue", "zustand"],
     }),

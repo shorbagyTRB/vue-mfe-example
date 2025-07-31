@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from "vue";
+import ErrorBoundary from "./ErrorBoundary.vue";
 
 const props = defineProps<{
   wrapper: { mount: (el: HTMLElement) => void; unmount: () => void };
@@ -19,5 +20,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div ref="reactWrapper"></div>
+  <ErrorBoundary>
+    <div ref="reactWrapper"></div>
+  </ErrorBoundary>
 </template>

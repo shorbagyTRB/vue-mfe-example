@@ -11,7 +11,6 @@ export default defineConfig({
       remotes: {
         remote: "http://localhost:3001/assets/remoteEntry.js",
         remoteReact: "http://localhost:3002/assets/remoteEntry.js",
-        remoteSvelte: "http://localhost:3003/assets/remoteEntry.js",
       },
       shared: ["vue", "zustand"],
     }),

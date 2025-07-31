@@ -23,13 +23,17 @@ const { remoteModule: svelteButtonModule, isReady } =
       Remote application using zustand, HostButton and ReactButton use same
       store counter
     </p>
-    <div class="logo-container">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-      <HostButton />
-    </div>
+    <ErrorBoundary>
+      <div class="logo-container">
+        <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+        <HostButton />
+      </div>
+    </ErrorBoundary>
     <Wrapper :wrapper="reactButton" />
     <Wrapper v-if="!!isReady" :wrapper="svelteButtonModule" />
-    <Button />
+    <ErrorBoundary>
+      <Button />
+    </ErrorBoundary>
   </div>
 </template>
 

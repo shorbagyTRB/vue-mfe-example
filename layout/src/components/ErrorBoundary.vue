@@ -16,7 +16,7 @@ if (!slots.default) {
   console.error("ErrorBoundary component must have child components.");
 }
 
-onErrorCaptured((error: Error, instance, info: string) => {
+onErrorCaptured(() => {
   hasError.value = true;
 });
 </script>

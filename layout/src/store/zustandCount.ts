@@ -1,4 +1,9 @@
 import create from "vue-zustand";
 import countStore from "remoteReact/store";
 
-export const useCountStore = create(countStore);
+interface CountState {
+  count: number;
+  increaseCount: () => void;
+}
+
+export const useCountStore = create<CountState>(countStore);

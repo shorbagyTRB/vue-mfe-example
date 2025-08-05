@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Button from "remote/Button";
+import vueButton from "remote/mount";
 import reactButton from "remoteReact/mount";
 import HostButton from "./components/Button.vue";
 import Wrapper from "./components/Wrapper.vue";
@@ -31,9 +31,10 @@ const { remoteModule: svelteButtonModule, isReady } =
     </ErrorBoundary>
     <Wrapper :wrapper="reactButton" />
     <Wrapper v-if="!!isReady" :wrapper="svelteButtonModule" />
-    <ErrorBoundary>
-      <Button />
-    </ErrorBoundary>
+    <Wrapper :wrapper="vueButton" />
+    <!-- <ErrorBoundary>
+      <vueButton />
+    </ErrorBoundary> -->
   </div>
 </template>
 

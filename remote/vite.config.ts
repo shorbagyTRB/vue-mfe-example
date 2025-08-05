@@ -11,6 +11,7 @@ export default defineConfig({
       filename: "remoteEntry.js",
       exposes: {
         "./Button": "./src/components/Button.vue",
+        "./mount": "./src/mount.ts",
       },
       shared: ["vue"],
     }),

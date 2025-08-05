@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { defineAsyncComponent, ref } from "vue";
+
+const Text = defineAsyncComponent(() => import("./Text.vue"));
 
 const count = ref(0);
 
@@ -10,6 +12,7 @@ const add = () => count.value++;
   <div class="card-vue">
     <img src="../assets/vue.svg" class="logo vue" alt="Vue logo" />
     <button type="button" @click="add">count is {{ count }}</button>
+    <Text :text="`count is ${count}`" v-if="count > 3" />
   </div>
 </template>
 

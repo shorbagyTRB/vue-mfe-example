@@ -6,11 +6,11 @@ const props = defineProps<{
   wrapper: { mount: (el: HTMLElement) => void; unmount: () => void };
 }>();
 
-const reactWrapper = ref<HTMLElement | null>(null);
+const containerRef = ref<HTMLElement | null>(null);
 
 onMounted(() => {
-  if (reactWrapper.value) {
-    props.wrapper.mount(reactWrapper.value);
+  if (containerRef.value) {
+    props.wrapper.mount(containerRef.value);
   }
 });
 
@@ -21,6 +21,6 @@ onUnmounted(() => {
 
 <template>
   <ErrorBoundary>
-    <div ref="reactWrapper"></div>
+    <div ref="containerRef"></div>
   </ErrorBoundary>
 </template>

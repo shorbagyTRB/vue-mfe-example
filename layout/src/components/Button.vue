@@ -1,16 +1,15 @@
 <script setup lang="ts">
-import { countStore } from "../store/count";
+import { useCountStore } from "../store/zustandCount";
 
-const store = countStore();
+const count = useCountStore((state) => state.count);
+const increaseCount = useCountStore((state) => state.increaseCount);
 
-const add = () => store.count++;
+const add = () => increaseCount();
 </script>
 
 <template>
-  <h1>Host Button</h1>
-
   <div class="card">
-    <button type="button" @click="add">count is {{ store.count }}</button>
+    <button type="button" @click="add">count is {{ count }}</button>
   </div>
 </template>
 

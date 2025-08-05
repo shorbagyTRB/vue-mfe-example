@@ -1,0 +1,23 @@
+{
+  "name": "remote-svelte",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3003 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --port 3003 --strictPort",
+    "serve": "vite preview --port 3003 --strictPort",
+    "remote": "pnpm build && pnpm serve",
+    "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json"
+  },
+  "devDependencies": {
+    "@originjs/vite-plugin-federation": "^1.4.1",
+    "@sveltejs/vite-plugin-svelte": "^6.0.0",
+    "@tsconfig/svelte": "^5.0.4",
+    "svelte": "^5.35.5",
+    "svelte-check": "^4.2.2",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.4"
+  }
+}

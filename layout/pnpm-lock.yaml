@@ -14,6 +14,9 @@ importers:
       vue:
         specifier: ^3.5.17
         version: 3.5.18(typescript@5.8.3)
+      vue-zustand:
+        specifier: ^0.6.0
+        version: 0.6.0(vue@3.5.18(typescript@5.8.3))(zustand@5.0.6)
       zustand:
         specifier: ^5.0.6
         version: 5.0.6
@@ -325,6 +328,9 @@ packages:
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
 
+  '@types/web-bluetooth@0.0.20':
+    resolution: {integrity: sha512-g9gZnnXVq7gM7v3tJCWV/qw7w+KeOlSHAhgF9RytFyifW6AF61hdT2ucrYhPq9hLs5JIryeupHV3qGk95dH9ow==}
+
   '@vitejs/plugin-vue@6.0.1':
     resolution: {integrity: sha512-+MaE752hU0wfPFJEUAIxqw18+20euHHdxVtMvbFcOEpjEyfqXH/5DCoTHiVJ0J29EhTJdoTkjEv5YBKU9dnoTw==}
     engines: {node: ^20.19.0 || >=22.12.0}
@@ -400,6 +406,15 @@ packages:
         optional: true
       vue:
         optional: true
+
+  '@vueuse/core@10.11.1':
+    resolution: {integrity: sha512-guoy26JQktXPcz+0n3GukWIy/JDNKti9v6VEMu6kV2sYBsWuGiTU8OWdg+ADfUbHg3/3DlqySDe7JmdHrktiww==}
+
+  '@vueuse/metadata@10.11.1':
+    resolution: {integrity: sha512-IGa5FXd003Ug1qAZmyE8wF3sJ81xGLSqTqtQ6jaVfkeZ4i5kS2mwQF61yhVqojRnenVew5PldLyRgvdl4YYuSw==}
+
+  '@vueuse/shared@10.11.1':
+    resolution: {integrity: sha512-LHpC8711VFZlDaYUXEBbFBCQ7GS3dVU9mjOhhMhXP6txTV4EhYQg/KGnQuvt/sPAtoUKq7VVUnL6mVtFoL42sA==}
 
   alien-signals@1.0.13:
     resolution: {integrity: sha512-OGj9yyTnJEttvzhTUWuscOvtqxq5vrhF7vL9oS0xJ2mK0ItPYP1/y+vCFebfxoEyAz0++1AIwJ5CMr+Fk3nDmg==}
@@ -582,11 +597,28 @@ packages:
   vscode-uri@3.1.0:
     resolution: {integrity: sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==}
 
+  vue-demi@0.14.10:
+    resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
+    engines: {node: '>=12'}
+    hasBin: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+
   vue-tsc@2.2.12:
     resolution: {integrity: sha512-P7OP77b2h/Pmk+lZdJ0YWs+5tJ6J2+uOQPo7tlBnY44QqQSPYvS0qVT4wqDJgwrZaLe47etJLLQRFia71GYITw==}
     hasBin: true
     peerDependencies:
       typescript: '>=5.0.0'
+
+  vue-zustand@0.6.0:
+    resolution: {integrity: sha512-injGg2Nxcq7RBXe4n92LmIOcAP3DxqHr3w5uVhkV1BnCIChjztXfsWEX9k8IP3zb7EmHnDV5SW0XtxY6TQct2Q==}
+    peerDependencies:
+      vue: '>=3.2.0'
+      zustand: '>=4.3.0'
 
   vue@3.5.18:
     resolution: {integrity: sha512-7W4Y4ZbMiQ3SEo+m9lnoNpV9xG7QVMLa+/0RFwwiAVkeYoyGXqWE85jabU4pllJNUzqfLShJ5YLptewhCWUgNA==}
@@ -778,6 +810,8 @@ snapshots:
 
   '@types/estree@1.0.8': {}
 
+  '@types/web-bluetooth@0.0.20': {}
+
   '@vitejs/plugin-vue@6.0.1(vite@7.0.6)(vue@3.5.18(typescript@5.8.3))':
     dependencies:
       '@rolldown/pluginutils': 1.0.0-beta.29
@@ -890,6 +924,25 @@ snapshots:
     optionalDependencies:
       typescript: 5.8.3
       vue: 3.5.18(typescript@5.8.3)
+
+  '@vueuse/core@10.11.1(vue@3.5.18(typescript@5.8.3))':
+    dependencies:
+      '@types/web-bluetooth': 0.0.20
+      '@vueuse/metadata': 10.11.1
+      '@vueuse/shared': 10.11.1(vue@3.5.18(typescript@5.8.3))
+      vue-demi: 0.14.10(vue@3.5.18(typescript@5.8.3))
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+
+  '@vueuse/metadata@10.11.1': {}
+
+  '@vueuse/shared@10.11.1(vue@3.5.18(typescript@5.8.3))':
+    dependencies:
+      vue-demi: 0.14.10(vue@3.5.18(typescript@5.8.3))
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
 
   alien-signals@1.0.13: {}
 
@@ -1054,11 +1107,23 @@ snapshots:
 
   vscode-uri@3.1.0: {}
 
+  vue-demi@0.14.10(vue@3.5.18(typescript@5.8.3)):
+    dependencies:
+      vue: 3.5.18(typescript@5.8.3)
+
   vue-tsc@2.2.12(typescript@5.8.3):
     dependencies:
       '@volar/typescript': 2.4.15
       '@vue/language-core': 2.2.12(typescript@5.8.3)
       typescript: 5.8.3
+
+  vue-zustand@0.6.0(vue@3.5.18(typescript@5.8.3))(zustand@5.0.6):
+    dependencies:
+      '@vueuse/core': 10.11.1(vue@3.5.18(typescript@5.8.3))
+      vue: 3.5.18(typescript@5.8.3)
+      zustand: 5.0.6
+    transitivePeerDependencies:
+      - '@vue/composition-api'
 
   vue@3.5.18(typescript@5.8.3):
     dependencies:

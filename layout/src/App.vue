@@ -1,13 +1,39 @@
 <script setup lang="ts">
 import Button from "remote/Button";
+import reactButton from "remoteReact/mount";
 import HostButton from "./components/Button.vue";
+import Wrapper from "./components/Wrapper.vue";
+import { useLoadRemoteModuleDynamically } from "./utils";
+
+const { remoteModule: svelteButtonModule, isReady } =
+  useLoadRemoteModuleDynamically({
+    remoteName: "remoteSvelteDynamic",
+    remoteEntryUrl: "http://localhost:3003/assets/remoteEntry.js",
+    exposedPath: "./mount",
+    format: "esm",
+    from: "vite",
+  });
 </script>
 
 <template>
   <div class="layout">
     <h1>Layout</h1>
-    <HostButton />
-    <Button />
+    <p>
+      Layout is the host application, and it has a shared store with React
+      Remote application using zustand, HostButton and ReactButton use same
+      store counter
+    </p>
+    <ErrorBoundary>
+      <div class="logo-container">
+        <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+        <HostButton />
+      </div>
+    </ErrorBoundary>
+    <Wrapper :wrapper="reactButton" />
+    <Wrapper v-if="!!isReady" :wrapper="svelteButtonModule" />
+    <ErrorBoundary>
+      <Button />
+    </ErrorBoundary>
   </div>
 </template>
 
@@ -21,6 +47,12 @@ import HostButton from "./components/Button.vue";
   margin: 10px;
   color: #fff;
   font-size: 16px;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 .logo {
   height: 6em;

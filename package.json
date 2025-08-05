@@ -1,0 +1,22 @@
+{
+  "name": "vue-react-mfe",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently --names \"LAYOUT,REMOTE-VUE,REMOTE-REACT,REMOTE-SVELTE\" --prefix-colors \"blue,green,yellow,red\" \"pnpm --filter layout dev\" \"pnpm --filter remote remote\" \"pnpm --filter remote-react remote\" \"pnpm --filter remote-svelte remote\"",
+    "dev:remotes": "concurrently --names \"REMOTE-VUE,REMOTE-REACT,REMOTE-SVELTE\" --prefix-colors \"blue,green,yellow,red\" \"pnpm --filter remote remote\" \"pnpm --filter remote-react remote\" \"pnpm --filter remote-svelte remote\"",
+    "dev:layout": "pnpm --filter layout dev",
+    "dev:remote": "pnpm --filter remote remote",
+    "dev:remote-react": "pnpm --filter remote-react remote",
+    "dev:remote-svelte": "pnpm --filter remote-svelte remote",
+    "build": "pnpm --filter layout build && pnpm --filter remote build && pnpm --filter remote-react build && pnpm --filter remote-svelte build",
+    "build:layout": "pnpm --filter layout build",
+    "build:remote": "pnpm --filter remote build",
+    "build:remote-react": "pnpm --filter remote-react build",
+    "build:remote-svelte": "pnpm --filter remote-svelte build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
